@@ -3,7 +3,7 @@ import { Button, Container, Form, Row, Col, ProgressBar } from 'react-bootstrap'
 import { LinkContainer } from 'react-router-bootstrap';
 
 export function Sportdaten() {
-    const [sport, setsport] = useState<string>(() => sessionStorage.getItem('sport') || 'Nein')
+    const [sport, setsport] = useState<string>(() => sessionStorage.getItem('sport') || '')
     const [sportHaeufigkeit, setSportHaeufigkeit] = useState<string>(() => sessionStorage.getItem('sportHaeufigkeit') || '');
     const [sportZeit, setSportZeit] = useState<string>(() => sessionStorage.getItem('sportZeit') || '');
     const [sportGruende, setSportGruende] = useState<string>(() => sessionStorage.getItem('sportGruende') || '');
@@ -24,6 +24,7 @@ export function Sportdaten() {
                             value={sport}
                             onChange={(event: ChangeEvent<HTMLSelectElement>) => setsport(event.target.value)}
                         >
+                            <option value="">Bitte auswählen</option>
                             <option value="Ja">Ja</option>
                             <option value="Nein">Nein</option>
                         </Form.Select>

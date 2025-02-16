@@ -35,25 +35,38 @@ export function Arbeitsdaten() {
                     </Form.Group>
 
                     <Form.Group className="Formularelement">
-                        //TODO iel genauer bzw auswahl an einkommesspannen netto
-                        <Form.Label>Einkommen</Form.Label>
-                        <Form.Control
-                            className="EingabeFeld"
-                            type="number"
+                        <Form.Label>monatliches netto Einkommen</Form.Label>
+                        <Form.Select
+                            className="selection"
                             value={einkommen}
-                            onChange={(event: ChangeEvent<HTMLInputElement>) => setEinkommen(event.target.value)}
-                        />
+                            onChange={(event: ChangeEvent<HTMLSelectElement>) => setEinkommen(event.target.value)}
+                        >
+                            <option value="">Bitte auswählen</option>
+                            <option value="500">weniger als 3000€</option>
+                            <option value="3000">3000€ bis 5000€</option>
+                            <option value="5000">5000€ bis 10000€</option>
+                            <option value="10000">über 10000€</option>
+                        </Form.Select>
                     </Form.Group>
 
                     <Form.Group className="Formularelement">
-                        <Form.Label>Unternehmen Brnache? als selection?</Form.Label>
-                        //TODO agrag baugewerbe chemie und rohstoffindustrie dienstleistung ecormerce ernergie und umwelt finanzen und immobilien und versicherungen
-                        <Form.Control
-                            className="EingabeFeld"
-                            type="text"
+                        <Form.Label>Branche</Form.Label>
+                        <Form.Select
+                            className="selection"
                             value={unternehmen}
-                            onChange={(event: ChangeEvent<HTMLInputElement>) => setUnternehmen(event.target.value)}
-                        />
+                            onChange={(event: ChangeEvent<HTMLSelectElement>) => setUnternehmen(event.target.value)}
+                        >
+                            <option value="">Bitte auswählen</option>
+                            <option value="Andere">Andere</option>
+                            <option value="Argrar">Agrar</option>
+                            <option value="Baugewerbe">Baugewerbe</option>
+                            <option value="Chemie">Chemie</option>
+                            <option value="Rohstoffindustrie">Rohstoffindustrie</option>
+                            <option value="Dienstleistungssektor">Dienstleistungssektor</option>
+                            <option value="Ecommerce">Ecommerce</option>
+                            <option value="Energie">Energie</option>
+                            <option value="Finanzen, Immobilien und Versicherungen">Finanzen, Immobilien und Versicherungen</option>
+                        </Form.Select>
                     </Form.Group>
                     
                 </Form>

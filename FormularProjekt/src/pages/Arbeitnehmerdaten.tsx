@@ -5,7 +5,7 @@ import { LinkContainer } from 'react-router-bootstrap';
 export function Arbeitnehmerdaten() {
     const [abteilung, setAbteilung] = useState<string>(() => sessionStorage.getItem('abteilung') || '');
     const [position, setPosition] = useState<string>(() => sessionStorage.getItem('position') || '');
-    const [arbeitszeit, setArbeitszeit] = useState<string>(() => sessionStorage.getItem('arbeitszeit') || 'vollzeit');
+    const [arbeitszeit, setArbeitszeit] = useState<string>(() => sessionStorage.getItem('arbeitszeit') || '');
 
     useEffect(() => {
         sessionStorage.setItem('abteilung', abteilung);
@@ -50,6 +50,7 @@ export function Arbeitnehmerdaten() {
                             value={arbeitszeit} 
                             onChange={(event) => setArbeitszeit(event.target.value)}
                         >
+                            <option value="">Bitte auswählen</option>
                             <option value="vollzeit">Vollzeit</option>
                             <option value="teilzeit">Teilzeit</option>
                         </Form.Select>

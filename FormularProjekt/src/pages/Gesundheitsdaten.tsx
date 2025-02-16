@@ -3,9 +3,9 @@ import { Button, Container, Form, Row, Col, ProgressBar } from 'react-bootstrap'
 import { LinkContainer } from 'react-router-bootstrap';
 
 export function Gesundheitsdaten() {
-    const [rauchen, setRauchen] = useState<string>(() => sessionStorage.getItem('rauchen') || 'nein');
+    const [rauchen, setRauchen] = useState<string>(() => sessionStorage.getItem('rauchen') || '');
     const [zigaretten, setZigaretten] = useState<string>(() => sessionStorage.getItem('zigaretten') || '');
-    const [alkohol, setAlkohol] = useState<string>(() => sessionStorage.getItem('alkohol') || 'nein');
+    const [alkohol, setAlkohol] = useState<string>(() => sessionStorage.getItem('alkohol') || '');
     const [alkoholHaeufigkeit, setAlkoholHaeufigkeit] = useState<string>(() => sessionStorage.getItem('alkoholHaeufigkeit') || '');
 
     useEffect(() => sessionStorage.setItem('rauchen', rauchen), [rauchen]);
@@ -24,8 +24,9 @@ export function Gesundheitsdaten() {
                             value={rauchen} 
                             onChange={(event: ChangeEvent<HTMLSelectElement>) => setRauchen(event.target.value)}
                         >
-                            <option value="nein">Nein</option>
+                            <option value="">Bitte auswählen</option>
                             <option value="ja">Ja</option>
+                            <option value="nein">Nein</option>
                         </Form.Select>
                     </Form.Group>
                     //TODO quatitative und zeitlich fragen beides
@@ -49,8 +50,9 @@ export function Gesundheitsdaten() {
                             value={alkohol}
                             onChange={(event: ChangeEvent<HTMLSelectElement>) => setAlkohol(event.target.value)}
                         >
-                            <option value="nein">Nein</option>
+                            <option value="">Bitte auswählen</option>
                             <option value="ja">Ja</option>
+                            <option value="nein">Nein</option>
                         </Form.Select>
                     </Form.Group>
                     

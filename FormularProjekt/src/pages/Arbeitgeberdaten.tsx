@@ -1,5 +1,5 @@
 import { ChangeEvent, useState, useEffect } from 'react';
-import { Button, Container, Form, Row, Col, ProgressBar } from 'react-bootstrap';
+import { Button, Container, Form, Row, Col, ProgressBar, OverlayTrigger, Tooltip } from 'react-bootstrap';
 import { LinkContainer } from 'react-router-bootstrap';
 
 export function Arbeitgeberdaten() {
@@ -27,6 +27,12 @@ export function Arbeitgeberdaten() {
         sessionStorage.setItem('umsatzsteuerID', umsatzsteuerID);
     }, [umsatzsteuerID]);
 
+    const renderTooltip = (props: any) => (
+        <Tooltip id="tooltip" {...props} className="Tooltip">
+            Die Umsatzsteuer-ID wird für die steuerliche Identifikation verwendet.
+        </Tooltip>
+    );
+
     return (
         <div className="AußenContainer">
             <div className="FormularBody">
@@ -52,8 +58,16 @@ export function Arbeitgeberdaten() {
                     </Form.Group>
 
                     <Form.Group className="Formularelement">
-                        <Form.Label>Umsatzsteuer-ID</Form.Label>
+                        <OverlayTrigger placement="top" overlay={renderTooltip}>
+                            <Form.Label>Umsatzsteuer-ID
+                                <img
+                                    src="/questionmark.png"
+                                    className="fragezeichen"
+                                />
+                            </Form.Label>
+                        </OverlayTrigger>            
                         <Form.Control
+                            placeholder="DE123456789"
                             className="EingabeFeld"
                             type="text"
                             value={umsatzsteuerID}

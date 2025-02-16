@@ -57,6 +57,7 @@ export function Berufsdaten() {
                     <Form.Group className="Formularelement">
                         <Form.Label>Steueridentifikationsnummer</Form.Label>
                         <Form.Control
+                            placeholder="12 123 123 123"
                             className="EingabeFeld"
                             type="text"
                             value={steuerId}

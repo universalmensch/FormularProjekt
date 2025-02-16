@@ -6,8 +6,8 @@ export function Startseite() {
         <div className="AußenContainer">
             <div className="Startseite">
                 <h1>Hallo, schön dass du da bist.</h1>
-                <h3><b>ja der satz ist noch kacke Wir freuen uns, dass du an unserer Umfrage teilnimmst.</b></h3>
-                //TODO bite auswählen einheitlich rauchen trinken arbeitsmodell sport placeholder ustid und steuerid geburtstagsfeld
+                <h4><b>Bitte nehme dir kurz Zeit um unsere Umfrage auszufüllen.</b></h4>
+                //TODO geburtstagsfeld mit placeholder, start/end seite, sportseite überarbeiten, fragezeichen anpassen und an wichtigen stellen einfügen, formartierungen retten
                 
             </div>
             <LinkContainer to="/Formular_Seite_1">
