@@ -61,10 +61,10 @@ export function Arbeitgeberdaten() {
                             onChange={(event) => setJahresumsatz(event.target.value)}
                         >
                             <option value="">Bitte auswählen</option>
-                            <option value="500">unter 500 000</option>
-                            <option value="1000">500 000 bis 1 000 000</option>
-                            <option value="10 000">1 000 000 bis 10 000 000</option>
-                            <option value="viel">über 10 000 000</option>
+                            <option value="500">unter 500 000 €</option>
+                            <option value="1000">500 000 € bis 1 000 000 €</option>
+                            <option value="10 000">1 000 000 € bis 10 000 000 €</option>
+                            <option value="viel">über 10 000 000 €</option>
                         </Form.Select>
                     </Form.Group>
 

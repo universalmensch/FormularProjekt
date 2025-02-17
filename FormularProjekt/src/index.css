@@ -108,16 +108,32 @@
 
 .Tooltip.show {
   color: rgb(180, 180, 180);
-  border-radius: 5px;
+  border-radius: 8px;
   border-color: #3A5743;
   padding: 2px 12px;
   font-size: 14px;
+  background: transparent;
 }
 
 .fragezeichen {
   width: 16px;
   height: 16px;
   margin-left: 5px;
+}
+
+.Datepicker {
+  border: 2px solid #3A5743;
+  border-radius: 8px;
+  padding: 8px;
+  width: 100%;
+  font-size: 14px;
+  background: transparent;
+}
+
+.Datepicker:focus {
+  outline: none;
+  box-shadow: 0 0 5px #5AA9E6;
+  border-color: rgb(32, 44, 89);
 }
 
 .NavigationButtons {

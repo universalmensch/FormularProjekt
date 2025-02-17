@@ -2,6 +2,9 @@ import { ChangeEvent, useState, useEffect } from 'react';
 import { Button, Container, Form, Row, Col, ProgressBar } from 'react-bootstrap';
 import { LinkContainer } from 'react-router-bootstrap';
 import 'react-datepicker/dist/react-datepicker.css'
+import DatePicker from 'react-datepicker';
+import { MiddlewareReturn } from '@floating-ui/core';
+import { MiddlewareState } from '@floating-ui/dom';
 
 export function Basisinformationen() {
     const [vorname, setVorname] = useState<string>(() =>{
@@ -24,6 +27,19 @@ export function Basisinformationen() {
     }, [nachname]);
 
     const [nachnameError, setNachnameError] = useState<boolean>(false);
+
+    const [geburtstag, setGeburtstag] = useState<Date | null>(() =>{
+        const savedDate = sessionStorage.getItem('geburtstag');
+        return savedDate ? new Date(savedDate) : null;
+    });
+
+    useEffect(() => {
+        if (geburtstag) {
+            sessionStorage.setItem('geburtstag', geburtstag.toDateString());
+        } else {
+            sessionStorage.removeItem('geburtstag');
+        }
+    }, [geburtstag]);
 
     const handleWeiter = (event: React.MouseEvent<HTMLButtonElement>) => {
         if(vorname.trim() === ''){
@@ -87,7 +103,38 @@ export function Basisinformationen() {
                         </Form.Control.Feedback>
                     </Form.Group>
 
-                    
+                    <Form.Group className="Formularelement">
+                        <Form.Label htmlFor="GeburtstagsEingabe">Geburtstag</Form.Label>
+                        <div></div>
+                        <DatePicker
+                            className="Datepicker"
+                            id="GeburtstagsEingabe"
+                            placeholderText="TT.MM.JJJJ"
+                            dateFormat="dd.MM.yyyy"
+                            selected={geburtstag}
+                            onChange={(date) => setGeburtstag(date ? date : null)}
+                            showYearDropdown
+                            scrollableYearDropdown
+                            yearDropdownItemNumber={100}
+                            popperPlacement="top"
+                            popperModifiers={[
+                                {
+                                    name: "preventOverflow",
+                                    options: { boundary: "window" },
+                                    fn: function (state: MiddlewareState): MiddlewareReturn | Promise<MiddlewareReturn> {
+                                        throw new Error('unfixable zeug ist doch aufgerufen worden' + state);
+                                    }
+                                },
+                                {
+                                    name: "flip",
+                                    options: { fallbackPlacements: [] },
+                                    fn: function (state: MiddlewareState): MiddlewareReturn | Promise<MiddlewareReturn> {
+                                        throw new Error('unfixable zeug ist doch aufgerufen worden' + state);
+                                    }
+                                },
+                            ]}
+                        />
+                    </Form.Group>
                 </Form>
             </div>
             <Container className="NavigationButtons">

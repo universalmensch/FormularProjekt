@@ -1,7 +1,6 @@
 import { ChangeEvent, useState, useEffect } from 'react';
 import { Button, Container, Form, Row, Col, ProgressBar } from 'react-bootstrap';
 import { LinkContainer } from 'react-router-bootstrap';
-import DatePicker from 'react-datepicker';
 
 export function Koerperdaten() {
     const [augenfarbe, setAugenfarbe] = useState<string>(() => sessionStorage.getItem('augenfarbe') || '');
@@ -13,7 +12,7 @@ export function Koerperdaten() {
     useEffect(() => sessionStorage.setItem('gewicht', gewicht), [gewicht]);
 
     const [selectedOption, setSelectedOption] = useState<string>(() =>{
-        return sessionStorage.getItem('selectedOption') || ''
+        return sessionStorage.getItem('selectedOption') || 'option2'
     });
 
     useEffect(() => {
@@ -24,31 +23,10 @@ export function Koerperdaten() {
         setSelectedOption(event.target.value);
     };
 
-
-    const [geburtstag, setGeburtstag] = useState<Date>(() =>{
-        const savedDate = sessionStorage.getItem('geburtstag');
-        return savedDate ? new Date(savedDate) : new Date();
-    });
-
-    useEffect(() => {
-        sessionStorage.setItem('geburtstag', geburtstag.toDateString());
-    }, [geburtstag]);
-
     return (
         <div className="AußenContainer">
             <div className="FormularBody">
                 <Form className="Formular">
-                    <Form.Group className="Formularelement">
-                        <Form.Label>Geburtstag</Form.Label>
-                        <DatePicker
-                            className="EingabeFeld"
-                            id="GeburtstagsEingabe"
-                            placeholderText="Tag.Monat.Jahr"
-                            selected={geburtstag}
-                            onChange={(date) => setGeburtstag(date ? date : new Date())}
-                        />
-                    </Form.Group>
-
                     <Form.Group className="Formularelement Checkboxgroup">
                         <Form.Label>Geschlecht</Form.Label>
                         
@@ -105,11 +83,11 @@ export function Koerperdaten() {
                             onChange={(event: ChangeEvent<HTMLSelectElement>) => setAugenfarbe(event.target.value)}
                         >
                             <option value="">Bitte auswählen</option>
+                            <option value="Andere">Andere</option>
                             <option value="Blau">Blau</option>
                             <option value="Grün">Grün</option>
                             <option value="Braun">Braun</option>
                             <option value="Grau">Grau</option>
-                            <option value="Andere">Andere</option>
                         </Form.Select>
                     </Form.Group>
 
