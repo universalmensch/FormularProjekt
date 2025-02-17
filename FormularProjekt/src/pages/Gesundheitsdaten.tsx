@@ -5,13 +5,11 @@ import { LinkContainer } from 'react-router-bootstrap';
 export function Gesundheitsdaten() {
     const [rauchen, setRauchen] = useState<string>(() => sessionStorage.getItem('rauchen') || '');
     const [zigaretten, setZigaretten] = useState<string>(() => sessionStorage.getItem('zigaretten') || '');
-    const [alkohol, setAlkohol] = useState<string>(() => sessionStorage.getItem('alkohol') || '');
-    const [alkoholHaeufigkeit, setAlkoholHaeufigkeit] = useState<string>(() => sessionStorage.getItem('alkoholHaeufigkeit') || '');
+    const [tage, setTage] = useState<string>(() => sessionStorage.getItem('tage') || '');
 
     useEffect(() => sessionStorage.setItem('rauchen', rauchen), [rauchen]);
     useEffect(() => sessionStorage.setItem('zigaretten', zigaretten), [zigaretten]);
-    useEffect(() => sessionStorage.setItem('alkohol', alkohol), [alkohol]);
-    useEffect(() => sessionStorage.setItem('alkoholHaeufigkeit', alkoholHaeufigkeit), [alkoholHaeufigkeit]);
+    useEffect(() => sessionStorage.setItem('tage', tage), [tage]);
 
     return (
         <div className="AußenContainer">
@@ -29,45 +27,40 @@ export function Gesundheitsdaten() {
                             <option value="nein">Nein</option>
                         </Form.Select>
                     </Form.Group>
-                    //TODO quatitative und zeitlich fragen beides
 
                     {rauchen === 'ja' && (
-                        <Form.Group className="Formularelement">
-                            <Form.Label>Wie viele Zigaretten am Tag?</Form.Label>
-                            <Form.Control
-                                className="EingabeFeld"
-                                type="number"
-                                value={zigaretten}
-                                onChange={(event: ChangeEvent<HTMLInputElement>) => setZigaretten(event.target.value)}
-                            />
-                        </Form.Group>
+                        <>
+                            <Form.Group className="Formularelement">
+                                <Form.Label>Wie oft (pro Woche)</Form.Label>
+                                <Form.Select
+                                    className="selection"
+                                    value={tage} 
+                                    onChange={(event: ChangeEvent<HTMLSelectElement>) => setTage(event.target.value)}
+                                >
+                                    <option value="">Bitte auswählen</option>
+                                    <option value="1">1 mal</option>
+                                    <option value="3">2 bis 3 mal</option>
+                                    <option value="3">4 bis 5 mal</option>
+                                    <option value="3">6 bis 7 mal</option>
+                                </Form.Select>
+                            </Form.Group>
+                            
+                            <Form.Group className="Formularelement">
+                                <Form.Label>Wie viele Zigaretten?</Form.Label>
+                                <Form.Select
+                                    className="selection"
+                                    value={zigaretten} 
+                                    onChange={(event: ChangeEvent<HTMLSelectElement>) => setZigaretten(event.target.value)}
+                                >
+                                    <option value="">Bitte auswählen</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2 bis 4</option>
+                                    <option value="5">5 bis 10</option>
+                                    <option value="10">über 10</option>
+                                </Form.Select>
+                            </Form.Group>
+                        </>
                     )}
-
-                    <Form.Group className="Formularelement">
-                        <Form.Label>Trinkst du Alkohol?</Form.Label>
-                        <Form.Select
-                            className="selection"
-                            value={alkohol}
-                            onChange={(event: ChangeEvent<HTMLSelectElement>) => setAlkohol(event.target.value)}
-                        >
-                            <option value="">Bitte auswählen</option>
-                            <option value="ja">Ja</option>
-                            <option value="nein">Nein</option>
-                        </Form.Select>
-                    </Form.Group>
-                    
-                    {alkohol === 'ja' && (
-                        <Form.Group className="Formularelement">
-                            <Form.Label>Wie oft?</Form.Label>
-                            <Form.Control
-                                type="text"
-                                value={alkoholHaeufigkeit}
-                                onChange={(event: ChangeEvent<HTMLInputElement>) => setAlkoholHaeufigkeit(event.target.value)}
-                            />
-                        </Form.Group>
-                    )}//TODO in selection ändern
-                
-                    
                 </Form>
             </div>
             <Container className="NavigationButtons">
