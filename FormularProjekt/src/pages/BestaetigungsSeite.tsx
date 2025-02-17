@@ -5,8 +5,8 @@ export function BestaetigungsSeite() {
     return(
         <div className="AußenContainer">
             <div className="Bestaetigungsseite">
-                <p>deine Eingaben wurden gespeichert</p>
-                <p>du kannst dieses Fenster nun schließen</p>
+                <p><b>Deine Eingaben wurden gespeichert.</b></p>
+                <p><b>Du kannst dieses Fenster nun schließen.</b></p>
                 
             </div>
             <LinkContainer to="/">

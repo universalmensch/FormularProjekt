@@ -116,7 +116,7 @@ export function Basisinformationen() {
                             showYearDropdown
                             scrollableYearDropdown
                             yearDropdownItemNumber={100}
-                            popperPlacement="top"
+                            popperPlacement="top-start"
                             popperModifiers={[
                                 {
                                     name: "preventOverflow",
