@@ -55,17 +55,10 @@ export function Schuldaten() {
                             <option value="Informatik">Informatik</option>
                             <option value="Mathematik">Mathematik</option>
                             <option value="Physik">Physik</option>
-                            <option value="Religion">Religion</option>
-                            <option value="Sport">Sport</option>
-                            <option value="Franzoesisch">Französisch</option>
-                            <option value="Latein">Latein</option>
-                            <option value="Spanisch">Spanisch</option>
-                            <option value="Kunst">Kunst</option>
                             <option value="Biologie">Biologie</option>
                             <option value="Chemie">Chemie</option>
                         </Form.Select>
                     </Form.Group>
-                    //TODO scrollbalken? bei andere Textfeld aufploppen
                 
                     <Form.Group className="Formularelement">
                         <Form.Label>Angestrebter Abschluss</Form.Label>
