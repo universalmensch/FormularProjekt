@@ -52,21 +52,16 @@ export function Studiendaten() {
                     </Form.Group>
 
                     <Form.Group className="Formularelement">
-                        <Form.Label>Lieblingsfach is komisch</Form.Label>
+                        <Form.Label>Wie trinkst du dein Bier?</Form.Label>
                         <Form.Select
                             className="selection"
                             value={lieblingsfachstudent}
                             onChange={(event) => setLieblingsfachstudent(event.target.value)}
                         >
                             <option value="">Bitte auswählen</option>
-                            <option value="Andere">Andere</option>
-                            <option value="Deutsch">Deutsch</option>
-                            <option value="Englisch">Englisch</option>
-                            <option value="Informatik">Programmieren</option>
-                            <option value="Mathematik">Mathematik</option>
-                            <option value="Physik">User Centered Design</option>
-                            <option value="Religion">Produktions Organisation</option>
-                            <option value="Sport">Statistik</option>
+                            <option value="glas">Glas</option>
+                            <option value="flasche">Flasche</option>
+                            <option value="kasten">Kasten</option>
                         </Form.Select>
                     </Form.Group>
                 </Form>

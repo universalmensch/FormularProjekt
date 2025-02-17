@@ -24,17 +24,25 @@ export function Arbeitnehmerdaten() {
             <div className="FormularBody">
                 <Form className="Formular">
                     <Form.Group className="Formularelement">
-                        <Form.Label>Abteilung verwaltung buchhaltung marketing entwicklung produktioin</Form.Label>
-                        <Form.Control
-                            className="EingabeFeld"
-                            type="text"
-                            value={abteilung}
-                            onChange={(event: ChangeEvent<HTMLInputElement>) => setAbteilung(event.target.value)}
-                        />
+                        <Form.Label>Abteilung</Form.Label>
+                        <Form.Select
+                            className="selection"
+                            value={abteilung} 
+                            onChange={(event) => setAbteilung(event.target.value)}
+                        >
+                            <option value="">Bitte auswählen</option>
+                            <option value="andere">Andere</option>
+                            <option value="verwaltung">Verwaltung</option>
+                            <option value="buchhaltung">Buchhaltung</option>
+                            <option value="marketing">Marketing</option>
+                            <option value="entwicklung">Entwicklung</option>
+                            <option value="produktion">Produktion</option>
+                            <option value="vertrieb">Vertrieb</option>
+                        </Form.Select>
                     </Form.Group>
 
                     <Form.Group className="Formularelement">
-                        <Form.Label>Position  ???</Form.Label>
+                        <Form.Label>Position</Form.Label>
                         <Form.Control
                             className="EingabeFeld"
                             type="text"

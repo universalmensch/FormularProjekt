@@ -26,12 +26,18 @@ export function Arbeitsdaten() {
                 <Form className="Formular">
                     <Form.Group className="Formularelement">
                         <Form.Label>Abschluss</Form.Label>
-                        <Form.Control
-                            className="EingabeFeld"
-                            type="text"
+                        <Form.Select
+                            className="selection"
                             value={abschluss}
-                            onChange={(event: ChangeEvent<HTMLInputElement>) => setAbschluss(event.target.value)}
-                        />
+                            onChange={(event) => setAbschluss(event.target.value)}
+                        >
+                            <option value="">Bitte auswählen</option>
+                            <option value="Realschulabschluss">Realschulabschluss</option>
+                            <option value="Ausbildung">Ausbildung</option>
+                            <option value="Abitur">Abitur</option>
+                            <option value="Bachelor">Bachelor</option>
+                            <option value="Master">Master</option>
+                        </Form.Select>
                     </Form.Group>
 
                     <Form.Group className="Formularelement">

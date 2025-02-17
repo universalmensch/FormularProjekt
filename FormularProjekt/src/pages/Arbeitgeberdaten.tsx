@@ -38,23 +38,34 @@ export function Arbeitgeberdaten() {
             <div className="FormularBody">
                 <Form className="Formular">
                     <Form.Group className="Formularelement">
-                        <Form.Label>Anzahl Arbeitnehmer auswahl 1 10 - 100</Form.Label>
-                        <Form.Control
-                            className="EingabeFeld"
-                            type="number"
-                            value={anzahlArbeitnehmer}
-                            onChange={(event: ChangeEvent<HTMLInputElement>) => setAnzahlArbeitnehmer(event.target.value)}
-                        />
+                        <Form.Label>Anzahl Arbeitnehmer</Form.Label>
+                        <Form.Select 
+                            className="selection"
+                            value={anzahlArbeitnehmer} 
+                            onChange={(event) => setAnzahlArbeitnehmer(event.target.value)}
+                        >
+                            <option value="">Bitte auswählen</option>
+                            <option value="1">1 bis 10</option>
+                            <option value="10">10 bis 50</option>
+                            <option value="50">50 bis 100</option>
+                            <option value="100">100 bis 500</option>
+                            <option value="500">über 500</option>
+                        </Form.Select>
                     </Form.Group>
 
                     <Form.Group className="Formularelement">
                         <Form.Label>Jahresumsatz</Form.Label>
-                        <Form.Control
-                            className="EingabeFeld"
-                            type="number"
-                            value={jahresumsatz}
-                            onChange={(event: ChangeEvent<HTMLInputElement>) => setJahresumsatz(event.target.value)}
-                        />
+                        <Form.Select 
+                            className="selection"
+                            value={jahresumsatz} 
+                            onChange={(event) => setJahresumsatz(event.target.value)}
+                        >
+                            <option value="">Bitte auswählen</option>
+                            <option value="500">unter 500 000</option>
+                            <option value="1000">500 000 bis 1 000 000</option>
+                            <option value="10 000">1 000 000 bis 10 000 000</option>
+                            <option value="viel">über 10 000 000</option>
+                        </Form.Select>
                     </Form.Group>
 
                     <Form.Group className="Formularelement">
