@@ -49,7 +49,6 @@ export function Sportdaten() {
 
                             <Form.Group className="Formularelement">
                                 <Form.Label>Zu welcher Zeit machst du Sport</Form.Label>
-                                //TODO checkbox für tageszeit 
                                 <Form.Select
                                     className="selection"
                                     value={sportZeit}
@@ -66,6 +65,7 @@ export function Sportdaten() {
                                 <Form.Label>Was ist deine Motivation um Sport zu treiben?</Form.Label>
                                 <Form.Control
                                     as="textarea"
+                                    className="EingabeFeld"
                                     rows={3}
                                     value={sportGruende}
                                     onChange={(event: ChangeEvent<HTMLTextAreaElement>) => setSportGruende(event.target.value)}
