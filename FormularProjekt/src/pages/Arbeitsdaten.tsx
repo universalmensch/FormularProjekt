@@ -1,5 +1,5 @@
 import { ChangeEvent, useState, useEffect } from 'react';
-import { Button, Container, Form, Row, Col, ProgressBar } from 'react-bootstrap';
+import { Button, Container, Form, Row, Col, ProgressBar, OverlayTrigger, Tooltip } from 'react-bootstrap';
 import { LinkContainer } from 'react-router-bootstrap';
 
 export function Arbeitsdaten() {
@@ -19,6 +19,12 @@ export function Arbeitsdaten() {
     useEffect(() => {
         sessionStorage.setItem('unternehmen', unternehmen);
     }, [unternehmen]);
+
+    const renderTooltip = (props: any) => (
+        <Tooltip id="tooltip" {...props} className="Tooltip">
+            Dein monatliches Einkommen nach Steuern und Versicherungsbeiträgen.
+        </Tooltip>
+    );
 
     return (
         <div className="AußenContainer">
@@ -41,7 +47,14 @@ export function Arbeitsdaten() {
                     </Form.Group>
 
                     <Form.Group className="Formularelement">
-                        <Form.Label>monatliches netto Einkommen</Form.Label>
+                        <OverlayTrigger placement="top" overlay={renderTooltip}>
+                            <Form.Label>monatliches netto Einkommen
+                                <img
+                                    src="/questionmark2.png"
+                                    className="fragezeichen"
+                                />
+                            </Form.Label>
+                        </OverlayTrigger>
                         <Form.Select
                             className="selection"
                             value={einkommen}

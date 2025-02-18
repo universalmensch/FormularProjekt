@@ -1,5 +1,5 @@
 import { ChangeEvent, useState, useEffect } from 'react';
-import { Button, Container, Form, Row, Col, ProgressBar } from 'react-bootstrap';
+import { Button, Container, Form, Row, Col, ProgressBar, OverlayTrigger, Tooltip } from 'react-bootstrap';
 import { LinkContainer } from 'react-router-bootstrap';
 
 export function Berufsdaten() {
@@ -28,6 +28,12 @@ export function Berufsdaten() {
         }
     };
 
+    const renderTooltip = (props: any) => (
+        <Tooltip id="tooltip" {...props} className="Tooltip">
+            Deine persönliche, lebenslang gültige Identifikationsnummer beim Finanzamt für die Einkommensteuer.
+        </Tooltip>
+    );
+
     return (
         <div className="AußenContainer">
             <div className="FormularBody">
@@ -55,7 +61,14 @@ export function Berufsdaten() {
                     </Form.Group>
 
                     <Form.Group className="Formularelement">
-                        <Form.Label>Steueridentifikationsnummer</Form.Label>
+                        <OverlayTrigger placement="top" overlay={renderTooltip}>
+                            <Form.Label>Steueridentifikationsnummer
+                                <img
+                                    src="/questionmark2.png"
+                                    className="fragezeichen"
+                                />
+                            </Form.Label>
+                        </OverlayTrigger>
                         <Form.Control
                             placeholder="12 123 123 123"
                             className="EingabeFeld"

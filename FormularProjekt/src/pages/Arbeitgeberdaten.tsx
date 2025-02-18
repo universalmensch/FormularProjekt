@@ -29,7 +29,7 @@ export function Arbeitgeberdaten() {
 
     const renderTooltip = (props: any) => (
         <Tooltip id="tooltip" {...props} className="Tooltip">
-            Die Umsatzsteuer-ID wird für die steuerliche Identifikation verwendet.
+            Identifikationsnummer für dein Unternehmen, um die Umsatzsteuer korrekt abzuwickeln.
         </Tooltip>
     );
 
