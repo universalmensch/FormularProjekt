@@ -72,11 +72,11 @@ export function Arbeitgeberdaten() {
                         <OverlayTrigger placement="top" overlay={renderTooltip}>
                             <Form.Label>Umsatzsteuer-ID
                                 <img
-                                    src="/questionmark.png"
+                                    src="/questionmark2.png"
                                     className="fragezeichen"
                                 />
                             </Form.Label>
-                        </OverlayTrigger>            
+                        </OverlayTrigger>
                         <Form.Control
                             placeholder="DE123456789"
                             className="EingabeFeld"

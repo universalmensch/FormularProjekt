@@ -106,19 +106,31 @@
   border-color: rgb(32, 44, 89);
 }
 
-.Tooltip.show {
-  color: rgb(180, 180, 180);
-  border-radius: 8px;
-  border-color: #3A5743;
-  padding: 2px 12px;
+.tooltip .tooltip-inner {
+  background-color: #dfdfdf;
+  color: rgb(0, 0, 0);
   font-size: 14px;
-  background: transparent;
+  border-radius: 8px;
+  border: 2px solid #3A5743;
+}
+
+.tooltip .tooltip-arrow {
+  color: rgb(32, 44, 89);
+}
+
+.tooltip-inner {
+  max-width: 250px;
+}
+
+.tooltip.fade.show {
+  opacity: 1;
 }
 
 .fragezeichen {
-  width: 16px;
-  height: 16px;
+  width: 18px;
+  height: 18px;
   margin-left: 5px;
+  margin-bottom: 4px;
 }
 
 .Datepicker {

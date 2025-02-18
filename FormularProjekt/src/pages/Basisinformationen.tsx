@@ -3,8 +3,6 @@ import { Button, Container, Form, Row, Col, ProgressBar } from 'react-bootstrap'
 import { LinkContainer } from 'react-router-bootstrap';
 import 'react-datepicker/dist/react-datepicker.css'
 import DatePicker from 'react-datepicker';
-import { MiddlewareReturn } from '@floating-ui/core';
-import { MiddlewareState } from '@floating-ui/dom';
 
 export function Basisinformationen() {
     const [vorname, setVorname] = useState<string>(() =>{
