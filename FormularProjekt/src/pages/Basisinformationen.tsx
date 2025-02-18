@@ -116,23 +116,7 @@ export function Basisinformationen() {
                             showYearDropdown
                             scrollableYearDropdown
                             yearDropdownItemNumber={100}
-                            popperPlacement="top-start"
-                            popperModifiers={[
-                                {
-                                    name: "preventOverflow",
-                                    options: { boundary: "window" },
-                                    fn: function (state: MiddlewareState): MiddlewareReturn | Promise<MiddlewareReturn> {
-                                        throw new Error('unfixable zeug ist doch aufgerufen worden' + state);
-                                    }
-                                },
-                                {
-                                    name: "flip",
-                                    options: { fallbackPlacements: [] },
-                                    fn: function (state: MiddlewareState): MiddlewareReturn | Promise<MiddlewareReturn> {
-                                        throw new Error('unfixable zeug ist doch aufgerufen worden' + state);
-                                    }
-                                },
-                            ]}
+                            popperPlacement="top"
                         />
                     </Form.Group>
                 </Form>
