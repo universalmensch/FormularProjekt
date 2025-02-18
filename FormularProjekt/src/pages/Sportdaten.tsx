@@ -33,7 +33,7 @@ export function Sportdaten() {
                     {sport === 'Ja' && (
                         <>
                             <Form.Group className="Formularelement">
-                                <Form.Label>Wie häufig machst du Sport (pro Woche)</Form.Label>
+                                <Form.Label>Wie häufig machst du Sport (pro Woche)?</Form.Label>
                                 <Form.Select
                                     className="selection"
                                     value={sportHaeufigkeit}
@@ -48,7 +48,7 @@ export function Sportdaten() {
                             </Form.Group>
 
                             <Form.Group className="Formularelement">
-                                <Form.Label>Zu welcher Zeit machst du Sport</Form.Label>
+                                <Form.Label>Zu welcher Tageszeit machst du Sport?</Form.Label>
                                 <Form.Select
                                     className="selection"
                                     value={sportZeit}

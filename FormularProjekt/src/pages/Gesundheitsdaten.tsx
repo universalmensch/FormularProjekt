@@ -31,7 +31,7 @@ export function Gesundheitsdaten() {
                     {rauchen === 'ja' && (
                         <>
                             <Form.Group className="Formularelement">
-                                <Form.Label>Wie oft (pro Woche)</Form.Label>
+                                <Form.Label>Wie oft (pro Woche)?</Form.Label>
                                 <Form.Select
                                     className="selection"
                                     value={tage} 
